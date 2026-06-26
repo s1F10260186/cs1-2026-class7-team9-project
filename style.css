@@ -103,7 +103,7 @@ footer {
     color: white;
 }
 
-/* ブロックアニメーション*/
+/* 上側ブロックアニメーション*/
 .block-line {
     display: flex;
     justify-content: flex-start;
@@ -132,6 +132,26 @@ footer {
     0% {
         opacity: 0;
         transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 下側ブロックアニメーション */
+.block-line-bottom {
+    flex-direction: row-reverse; /* 右から左に並べる */
+}
+
+.block-line-bottom .block.is-placed {
+    animation: placeBlockReverse 0.3s forwards;
+}
+
+@keyframes placeBlockReverse {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* 20px下から湧き出る */
     }
     100% {
         opacity: 1;
