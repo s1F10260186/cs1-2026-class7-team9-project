@@ -1,13 +1,18 @@
-/* 全体 */
+
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
     font-family: "メイリオ", sans-serif;
-    background-color: #f5f5f5;
+    
+  
+    background-image: url('images/grass.png');
+    background-repeat: repeat;
+    background-size: 64px 64px;
+    image-rendering: pixelated; 
 }
 
 /* ヘッダー */
@@ -40,15 +45,14 @@ nav a {
     font-weight: bold;
 }
 
-/* メイン画像 */
-/* 既存の .hero をこれに書き換え（レイアウトの干渉を防ぎます） */
+
 .hero {
     background-image: url("hero.jpg");
     background-size: cover;
     background-position: center;
     height: 300px;
-    position: relative; /* 外縁ブロックの基準にする */
-    overflow: hidden;   /* はみ出たブロックを隠す */
+    position: relative; 
+    overflow: hidden;   
 }
 
 .hero h2 {
@@ -57,16 +61,30 @@ nav a {
     text-shadow: 2px 2px 4px black;
 }
 
-/* セクション */
-.section {
-    padding: 40px 20px;
-    background-color: white;
-    margin: 20px auto;
-    max-width: 900px;
-    border-radius: 10px;
+
+#about, #modes {
+    background-image: url('images/stone.png');
+    background-repeat: repeat;
+    background-size: 64px 64px;
 }
 
-/* 魅力カード */
+
+#features, #gallery {
+    background-image: url('images/deepslate.png');
+    background-repeat: repeat;
+    background-size: 64px 64px;
+}
+
+
+.section {
+    padding: 40px 20px;
+    background-color: rgba(255, 255, 255, 0.95); 
+    margin: 40px auto; 
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+
+
 .features {
     display: flex;
     gap: 20px;
@@ -103,11 +121,7 @@ footer {
     color: white;
 }
 
-/* ==========================================
-   灰色ゾーンの外縁アニメーション用CSS
-========================================== */
 
-/* タイトル文字を中央に重ねる設定 */
 .hero-content {
     position: absolute;
     top: 0; left: 0;
@@ -115,11 +129,11 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10; /* ブロックより手前に表示 */
+    z-index: 10;
     pointer-events: none;
 }
 
-/* タイトルの文字デザイン */
+
 .hero-content h2 {
     color: white;
     font-size: 28px;
@@ -127,12 +141,12 @@ footer {
     margin: 0;
 }
 
-/* ブロックを外周に配置する設定 */
+
 .block-perimeter {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    z-index: 5; /* タイトルより奥に表示 */
+    z-index: 5; 
     pointer-events: none;
 }
 .block-line {
